@@ -1,13 +1,14 @@
 {
   "name": "nanocyte-component-selective-collect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Selectively collect input values by keys",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "nanocyte-component-return-value": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.3.0",

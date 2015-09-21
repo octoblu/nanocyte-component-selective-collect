@@ -1,16 +1,11 @@
-{Transform} = require 'stream'
+ReturnValue = require 'nanocyte-component-return-value'
 _ = require 'lodash'
 
-class SelectiveCollect extends Transform
-  constructor: ->
-    super objectMode: true
-
-  _transform: (envelope, enc, next) =>
+class SelectiveCollect extends ReturnValue
+  onEnvelope: (envelope) =>
     {message, config, data} = envelope
     newData = _.defaults message, data
 
-    @push _.pick newData, config.composeKeys
-    @push null
-    next()
+    return _.pick newData, config.composeKeys
 
 module.exports = SelectiveCollect
