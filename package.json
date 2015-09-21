@@ -1,0 +1,37 @@
+{
+  "name": "nanocyte-component-selective-collect",
+  "version": "1.0.0",
+  "description": "Selectively collect input values by keys",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "coffee-script": "^1.10.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/nanocyte-component-selective-collect.git"
+  },
+  "keywords": [
+    "Nanocyte",
+    "Meshblu",
+    "Octoblu"
+  ],
+  "author": "Octoblu Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/nanocyte-component-selective-collect/issues"
+  },
+  "homepage": "https://github.com/octoblu/nanocyte-component-selective-collect#readme"
+}
