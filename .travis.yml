@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: oLiXlNgJ2NtU4FYN+T85BX8iXyhswsqoYnMug65mRHtsW0cm3vSDXNaHaWKc63uWlBts+i61wLQlIACkgGX+shmVE+DEv6f8EeN6snIDvn6sfWrjoC+l9V1Zu9HWUMLwsM5MJBgXxdiR6ZLxHJ22ZWyGfkcJlGBMCj+JV3psntIJrAmQClFFXvjikEkk/9PgwjMYSBr0LrJ5mFy5kpVD+w/GChgsV4YP9XAMndw5UULBfCtD5GxqNr1GGGySZpr0kTrzRtqFJG2mQbda3RF4H198sIf6iLGnxhnRrkOf39CMa2i88EVog5cyoApnnSvPUszpBwkX6R+plgPZfcGoa4Hktt4igzfNje0uMaLoSkswgGtCppl2NzLtiIbCmW4B1LbwE0RBfJoFdIoTWFFp7f2wy53ldmhY+iXsI8XMQ5Sejp9ewZq0i1LcfdYJcuF7BNjFYEsk2mAvp9KLq7f7rB1qK0V8oOn10EIMeraGrNvTlYbC59DpRD5nOVbPIfN2n8BmRvCl3z+BXSDO61JjeXYYIF1YAnry8vOJ5rXkCvwb7cxkeX90iwxOWwNvNyaHmcZba5g7Q2y4ORjFWe6zwcBuuukh5ERIeToxo9stI6mwb38G3vUCS0Ptr/Rvt57t6rL4PouCa6RIYCcL8PPOlbww6xQRtMBH2osQhiLDTuA=
+  on:
+    tags: true
+    branches: true
+    repo: octoblu/nanocyte-component-selective-collect
