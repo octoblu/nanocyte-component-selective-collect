@@ -8,7 +8,7 @@ describe 'SelectiveCollect', ->
     beforeEach ->
       @result = @sut.onEnvelope
         message: {foo: 'bar', stairs: 'the mall'}
-        config: {composeKeys: ['foo']}
+        config: {compose: {'foo': 'foo'}}
         data: {}
 
     it 'should return the message', ->
@@ -18,28 +18,28 @@ describe 'SelectiveCollect', ->
     beforeEach ->
       @result = @sut.onEnvelope
         message: {glass: 'mirror', stairs: 'the mall'}
-        config: {composeKeys: ['glass', 'stairs']}
+        config: {compose: {'glass': 'glass', 'stairs': 'stairs'}}
         data: {}
 
-    it 'should be readable', ->
+    it 'should return all the keys in message', ->
       expect(@result).to.deep.equal {glass: 'mirror', stairs: 'the mall'}
 
   describe 'when written to while it already has data', ->
     beforeEach ->
       @result = @sut.onEnvelope
         message: {stairs: 'the mall'}
-        config:  {composeKeys: ['glass', 'stairs']}
+        config:  {compose: {'glass': 'glass', 'stairs': 'stairs'}}
         data:    {glass: 'mirror'}
 
-    it 'should be readable', ->
+    it 'should merge the message with the data and whitelist the result', ->
       expect(@result).to.deep.equal {glass: 'mirror', stairs: 'the mall'}
 
   describe 'when written to while it already has data it shouldnt', ->
     beforeEach ->
       @result = @sut.onEnvelope
         message: {stairs: 'the mall'}
-        config:  {composeKeys: ['stairs']}
+        config:  {compose: {'stairs': 'stairs'}}
         data:    {glass: 'mirror'}
 
-    it 'should be readable', ->
+    it 'should return the message an ignore non-whitelisted keys', ->
       expect(@result).to.deep.equal {stairs: 'the mall'}

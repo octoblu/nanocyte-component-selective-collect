@@ -6,6 +6,6 @@ class SelectiveCollect extends ReturnValue
     {message, config, data} = envelope
     newData = _.defaults message, data
 
-    return _.pick newData, config.composeKeys
+    return _.pick newData, _.keys(config.compose)
 
 module.exports = SelectiveCollect
