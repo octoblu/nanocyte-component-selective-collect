@@ -1,6 +1,6 @@
 {
   "name": "nanocyte-component-selective-collect",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Selectively collect input values by keys",
   "main": "index.js",
   "directories": {

@@ -5,8 +5,11 @@ class SelectiveCollect extends ReturnValue
   onEnvelope: (envelope) =>
     {config, data} = envelope
 
-    compose = _.pick config.compose, (value) => value?
-    newData = _.defaults {}, compose, data
-    return _.pick newData, _.keys(config.compose)
+    result = {}
+    _.each config.compose, (value, key) =>
+      value ?= _.get data, key
+      _.set result, key, value if value?
+
+    return result
 
 module.exports = SelectiveCollect

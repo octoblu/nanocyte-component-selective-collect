@@ -4,14 +4,18 @@ describe 'SelectiveCollect', ->
   beforeEach ->
     @sut = new SelectiveCollect
 
-  describe 'when given more than we collect', ->
+  describe 'when given a deep key', ->
     beforeEach ->
       @result = @sut.onEnvelope
-        config: {compose: {'foo': 'bar'}}
+        config: {compose: {'foo.really.deep': 'bar'}}
         data: {}
 
     it 'should return the message', ->
-      expect(@result).to.deep.contain {foo: 'bar'}
+      expect(@result).to.deep.equal(
+        foo:
+          really:
+            deep: 'bar'
+      )
 
   describe 'when written to again', ->
     beforeEach ->
