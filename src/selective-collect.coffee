@@ -11,7 +11,7 @@ class SelectiveCollect extends ReturnValue
 
     _.each composeData, ([key, value]) =>
       value ?= _.get data, key
-      _.set result, key, value if value?
+      _.set result, "#{key}", value if value?
 
     return result
 
