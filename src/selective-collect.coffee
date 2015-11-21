@@ -6,10 +6,17 @@ class SelectiveCollect extends ReturnValue
     {config, data} = envelope
 
     result = {}
-    _.each config.compose, (value, key) =>
+
+    composeData = @_convert config.compose
+
+    _.each composeData, ([key, value]) =>
       value ?= _.get data, key
       _.set result, key, value if value?
 
     return result
+
+  _convert: (data) =>
+    return data if _.isArray data
+    _.pairs data
 
 module.exports = SelectiveCollect

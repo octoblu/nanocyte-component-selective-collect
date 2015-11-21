@@ -1,6 +1,6 @@
 {
   "name": "nanocyte-component-selective-collect",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Selectively collect input values by keys",
   "main": "index.js",
   "directories": {
@@ -21,7 +21,7 @@
     "sinon-chai": "^2.8.0"
   },
   "scripts": {
-    "test": "istanbul cover _mocha -- -R spec"
+    "test": "istanbul cover _mocha -- -R spec --require coffee-coverage/register-istanbul"
   },
   "repository": {
     "type": "git",
