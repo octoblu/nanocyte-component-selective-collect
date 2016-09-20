@@ -14,14 +14,18 @@
     "chai": "^3.3.0",
     "coffee-coverage": "^0.6.3",
     "coffee-script": "^1.10.0",
-    "istanbul": "^0.3.20",
     "mocha": "^2.3.3",
     "mocha-istanbul": "^0.2.0",
+    "mocha-multi": "^0.9.1",
+    "mocha-osx-reporter": "^0.1.2",
+    "nyc": "^8.3.0",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0"
   },
   "scripts": {
-    "test": "istanbul cover _mocha -- -R spec --require coffee-coverage/register-istanbul && mocha --reporter json > coverage/mocha.json"
+    "test": "env NODE_ENV=test mocha",
+    "coverage": "nyc npm test",
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
   },
   "repository": {
     "type": "git",
@@ -37,5 +41,16 @@
   "bugs": {
     "url": "https://github.com/octoblu/nanocyte-component-selective-collect/issues"
   },
-  "homepage": "https://github.com/octoblu/nanocyte-component-selective-collect#readme"
+  "homepage": "https://github.com/octoblu/nanocyte-component-selective-collect#readme",
+  "nyc": {
+    "cache": true,
+    "reporter": [
+      "text-summary",
+      "lcov",
+      "json"
+    ],
+    "extension": [
+      ".coffee"
+    ]
+  }
 }
